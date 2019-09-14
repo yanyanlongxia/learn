@@ -191,7 +191,7 @@ int main()
 {
 	read(n);
 	for (int i=1; i<=n; ++i) read(to[i][0]),read(to[i][1]);
-	int l=1,r=n,ans=-1;
+	int l=0,r=n,ans=-1;
 	while (l<=r)//最小化最大，二分答案
 	{
 		int mid=(l+r)>>1;
