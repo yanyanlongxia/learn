@@ -456,8 +456,8 @@ namespace IO
 using IO::read;
 using IO::write;
 
-template<typename T>inline bool chkMin(T &a,const T &b) { a>b ? (a=b, true) : false; }
-template<typename T>inline bool chkMax(T &a,const T &b) { a<b ? (a=b, true) : false; }
+template<typename T>inline bool chkMin(T &a,const T &b) { return a>b ? (a=b, true) : false; }
+template<typename T>inline bool chkMax(T &a,const T &b) { return a<b ? (a=b, true) : false; }
 
 int a[20][20], f[1<<20];
 bool ok[1<<20];
