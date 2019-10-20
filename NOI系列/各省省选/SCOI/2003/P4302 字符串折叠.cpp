@@ -56,7 +56,7 @@ inline bool check(int l, int r, int len)//判断是否是循环节
 
 int m[MaxN];//m[i] 表示的是 i 的位数
 int f[MaxN][MaxN];//f[i][j] 表示 i 到 j 这个区间内最小的长度
-int main()
+int main()//注释直接粘别人的了，求原谅！
 {
 	scanf("%s", s + 1);
 	int n = strlen(s + 1);
