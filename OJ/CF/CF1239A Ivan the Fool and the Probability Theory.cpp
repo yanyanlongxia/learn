@@ -46,7 +46,7 @@ template <typename T> inline bool chkMax(T &a, const T &b) { return a < b ? (a =
 template <typename T> inline T min(T a, T b) { return a < b ? a : b; }
 template <typename T> inline T max(T a, T b) { return a > b ? a : b; }
 
-ll f[MaxN][2];//f[i][0/1] 表示第 i 个格子的颜色为黑白的合法方案数
+ll f[MaxN][2];//f[i][0/1] 表示第 i 个格子的颜色为黑/白的合法方案数
 int main()
 {
 	int n, m; read(n, m);
