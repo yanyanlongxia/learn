@@ -47,7 +47,7 @@ template <typename T> inline T max(T a, T b) { return a > b ? a : b; }
 
 int last[MaxK], p[MaxK][MaxK], Min[MaxK][MaxK], sum[MaxK];//last 表示字符最后出现的位置，p 表示更新维护最小值的位置
 char s[MaxN];//Min 表示维护的最小值，sum 表示字符出现的次数
-int main()
+int main()//题意：给一个字符串，求其中的一段，使得出现次数最多的字符与出现次数最少的字符的出现次数之差最大，题解：https://www.cnblogs.com/rmy020718/p/9615482.html
 {
 	int n, ans = 0; read(n);
 	scanf("%s", s + 1);
