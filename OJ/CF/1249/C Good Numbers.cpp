@@ -57,17 +57,17 @@ int main()
 		int len = 0;
 		while (n) a[len ++] = n % 3, n /= 3;
 		for (int i = 60; i >= 0; -- i) if (a[i] == 2)
-        {
-            a[i] = 0;
-            int res = 1;
-            for (int j = i + 1; j <= 60; ++ j)
-            {
-                a[j] += res, res = 0;
+		{
+		    a[i] = 0;
+		    int res = 1;
+		    for (int j = i + 1; j <= 60; ++ j)
+		    {
+				a[j] += res, res = 0;
 				if (a[j] == 2) a[j] = 0, res = 1;
-            }
-            for (int j = i - 1; j >= 0; -- j) a[j] = 0;
-        }
-        ll ans = 0, mul = 1;
+		    }
+		    for (int j = i - 1; j >= 0; -- j) a[j] = 0;
+		}
+		ll ans = 0, mul = 1;
 		for (int i = 0; i <= 60; ++ i)
 		{
 			if (a[i] == 1) ans += mul;
