@@ -54,10 +54,10 @@ int main()
 		for (int j = 1; j <= m; ++ j)
 		{
 			read(a[i][j]);
-			l[i][j] = r[i][j] = j;
-			Up[i][j] = 1;
+			l[i][j] = r[i][j] = j;//先都处理成右边
+			Up[i][j] = 1;//高度为 1
 		}
-	for (int i = 1; i <= n; ++ i)
+	for (int i = 1; i <= n; ++ i)//l[i][j]，r[i][j] 即（i，j）点向左/右的最大宽度
 		for (int j = 2; j <= m; ++ j)
 			if (a[i][j] ^ a[i][j - 1]) l[i][j] = l[i][j - 1];//预处理左边界
 	for (int i = 1; i <= n; ++ i)
@@ -69,16 +69,16 @@ int main()
 			if (i > 1 && a[i][j] != a[i - 1][j])
 			{
 				chkMax(l[i][j], l[i - 1][j]);
-				chkMin(r[i][j], r[i - 1][j]);
+				chkMin(r[i][j], r[i - 1][j]);//区间收束
 				Up[i][j] = Up[i - 1][j] + 1;
 			}
 			int a = r[i][j] - l[i][j] + 1;//横向长度
-			int b = min(a, Up[i][j]);//竖向长度
+			int b = min(a, Up[i][j]);//竖向长度，因为是正方形所以必须保证长宽相等
 			chkMax(ans1, b * b);//正方形
 			chkMax(ans2, a * Up[i][j]);//长方形
 		}
-    write(ans1, '\n', true);
-    write(ans2, '\n', true);
-    IO::flush();
+	write(ans1, '\n', true);
+	write(ans2, '\n', true);
+	IO::flush();
 	return 0;
 }
