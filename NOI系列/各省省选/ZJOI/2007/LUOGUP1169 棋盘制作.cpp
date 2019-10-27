@@ -47,7 +47,7 @@ template <typename T> inline T min(T a, T b) { return a < b ? a : b; }
 template <typename T> inline T max(T a, T b) { return a > b ? a : b; }
 
 iiarr a, l, r, Up;
-int main()
+int main()//悬线法
 {
 	int n, m, ans1 = 0, ans2 = 0; read(n, m);
 	for (int i = 1; i <= n; ++ i)
