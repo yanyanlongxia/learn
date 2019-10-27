@@ -61,7 +61,7 @@ int main()//悬线法
 		for (int j = 2; j <= m; ++ j)
 			if (a[i][j] ^ a[i][j - 1]) l[i][j] = l[i][j - 1];//预处理左边界
 	for (int i = 1; i <= n; ++ i)
-		for (int j = m - 1; j >= 0; -- j)
+		for (int j = m - 1; j >= 1; -- j)
 			if (a[i][j] ^ a[i][j + 1]) r[i][j] = r[i][j + 1];//预处理右边界
 	for (int i = 1; i <= n; ++ i)
 		for (int j = 1; j <= m; ++ j)
