@@ -63,32 +63,32 @@ inline void Pre()
 
 int f[MaxN];
 bool vis[MaxN];
-int main()
+int main()//https://www.luogu.org/blog/Tian-Xing/solution-p1857
 {
 	Pre();
 	f[0] = f[1] = 0, f[2] = f[3] = 1;
-    vis[0] = vis[1] = 0, vis[2] = vis[3] = 1;//递归的初始化条件
-    //如果只有 0 或 1 个那就不用取了，0 步，必胜
-    for (int i = 4; i <= W; ++ i)
-    {
-        bool flag = false;//判断是不是必胜方案
-        for (int j = 1; j <= cnt && prime[j] <= i; ++ j)
+	vis[0] = vis[1] = 0, vis[2] = vis[3] = 1;//递归的初始化条件
+	//如果只有 0 或 1 个那就不用取了，0 步，必胜
+	for (int i = 4; i <= W; ++ i)
+	{
+		bool flag = false;//判断是不是必胜方案
+		for (int j = 1; j <= cnt && prime[j] <= i; ++ j)
 			if (!vis[i - prime[j]]) { vis[i] = flag = true; break; }//寻找必胜方案
-        if (!flag) vis[i] = 0;
-        if (vis[i])
-        {
-        	int Mn = 1 << 30;
-        	for (int j = 1; j <= cnt && prime[j] <= i; ++ j)
+		if (!flag) vis[i] = 0;
+		if (vis[i])
+		{
+			int Mn = 1 << 30;
+			for (int j = 1; j <= cnt && prime[j] <= i; ++ j)
 				if (!vis[i - prime[j]]) chkMin(Mn, f[i - prime[j]]);
 			f[i] = Mn + 1;//如果必胜，在每种符合条件的情况里找一种步数最少的
 		}
-        else
-        {
-        	int Mx = 0;//若必败，则每一种情况都必败，无需判断
-        	for (int j = 1; j <= cnt && prime[j] <= i; ++ j) chkMax(Mx, f[i - prime[j]]);
+		else
+		{
+			int Mx = 0;//若必败，则每一种情况都必败，无需判断
+			for (int j = 1; j <= cnt && prime[j] <= i; ++ j) chkMax(Mx, f[i - prime[j]]);
 			f[i] = Mx + 1;//如果必败，直接找最多的
 		}
-    }
+	}
 	int n; read(n);
 	for (int i = 1, x; i <= n; ++ i) read(x), write(!vis[x] ? -1 : f[x], '\n', true);
 	IO::flush();
