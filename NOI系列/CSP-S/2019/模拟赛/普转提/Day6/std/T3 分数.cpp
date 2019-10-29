@@ -51,7 +51,7 @@ template <typename T> inline T gcd(T a, T b) { return b ? gcd(b, a % b) : a; }
 ll ans[MaxN * 10];
 int len = 1;
 std::map<int, int> vis;
-inline void add(int x)//È»ºó°ÑËùÓĞÔ¼Êı³ËÆğÀ´£¬ĞèÒª»¯³ÉÊ®Áù½øÖÆ£¬Ïò¸ß¾«¶ÈÄÇÑù£¬ÎŞÄÎ
+inline void add(int x)//ç„¶åæŠŠæ‰€æœ‰çº¦æ•°ä¹˜èµ·æ¥ï¼Œéœ€è¦åŒ–æˆåå…­è¿›åˆ¶ï¼Œåƒé«˜ç²¾åº¦é‚£æ ·ï¼Œæ— å¥ˆ
 {
 	if (vis[x]) return ;
 	vis[x] = 1;
@@ -61,7 +61,7 @@ inline void add(int x)//È»ºó°ÑËùÓĞÔ¼Êı³ËÆğÀ´£¬ĞèÒª»¯³ÉÊ®Áù½øÖÆ£¬Ïò¸ß¾«¶ÈÄÇÑù£¬ÎŞ
 	while (!ans[len]) -- len;
 }
 
-inline void Appro(ll x)//´¦ÀíÔ¼Êı
+inline void Appro(ll x)//å¤„ç†çº¦æ•°
 {
 	for (ll i = 2; i * i <= x; ++ i) if (x % i == 0)
 	{
@@ -71,7 +71,7 @@ inline void Appro(ll x)//´¦ÀíÔ¼Êı
 	if (x) add(x);
 }
 
-int main()//Ë¼Â·ºÜÇÉ°¡£¬ÄÇ¸öÖ¤Ã÷¹ı³Ì»¹µÃ¿´¿´£¬ÔÙÀí½âÀí½â
+int main()//æ€è·¯å¾ˆå·§å•Šï¼Œé‚£ä¸ªè¯æ˜è¿‡ç¨‹è¿˜å¾—çœ‹çœ‹ï¼Œå†ç†è§£ç†è§£
 {
 	ans[1] = 1;
 	int n; read(n);
