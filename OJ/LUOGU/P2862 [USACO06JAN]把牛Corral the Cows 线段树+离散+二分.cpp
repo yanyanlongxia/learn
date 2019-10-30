@@ -115,14 +115,14 @@ int main()
 		std::sort(e + 1, e + en + 1);
 		std::sort(y + 1, y + yn + 1);
 		build(1, 1, yn);
-        int now = 0;
-        for (int i = 1; i <= en;  ++ i)
-        {
-            if (e[i].x != e[i - 1].x) chkMax(now, SGT::Max[1]);//同一个x都更新再更新答案
-            Change(1, 1, yn, std::lower_bound(y + 1, y + yn + 1, e[i].yl) - y, std::lower_bound(y + 1, y + yn + 1, e[i].yr) - y, e[i].val);
-        }
-        if (now >= c) ans = mid, r = mid - 1;
-        else l = mid + 1;
+		int now = 0;
+		for (int i = 1; i <= en;  ++ i)
+		{
+		    if (e[i].x != e[i - 1].x) chkMax(now, SGT::Max[1]);//同一个x都更新再更新答案
+		    Change(1, 1, yn, std::lower_bound(y + 1, y + yn + 1, e[i].yl) - y, std::lower_bound(y + 1, y + yn + 1, e[i].yr) - y, e[i].val);
+		}
+		if (now >= c) ans = mid, r = mid - 1;
+		else l = mid + 1;
 	}
 	write(ans, '\n', true);
 	IO::flush();
