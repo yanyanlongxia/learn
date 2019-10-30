@@ -56,13 +56,13 @@ int main()//ans=\frac{(a+k)(b+k)}{gcd(a+k,a−b)}
 		if ((a - b) % k == 0)//那么 a + k, b + k 就应该是\geq a,\geq b 的数中 q 的倍数中的最小的那个
 		{
 			int a1 = (a + k - 1) / k * k, b1 = (b + k - 1) / k * k;//然后再对答案取个min就可以了
-        	if (chkMin(res, (ll)a1 / gcd(a1, b1) * b1)) maxk = a1 - a;
-        	if (k * k < a - b)
+			if (chkMin(res, (ll)a1 / gcd(a1, b1) * b1)) maxk = a1 - a;
+			if (k * k < a - b)
 			{
-	            int kk = (a - b) / k;
-	            a1 = (a + kk - 1) / kk * kk, b1 = (b + kk - 1) / kk * kk;
-	            if (chkMin(res, (ll)a1 / gcd(a1, b1) * b1)) maxk = a1 - a;
-        	}
+				int kk = (a - b) / k;
+				a1 = (a + kk - 1) / kk * kk, b1 = (b + kk - 1) / kk * kk;
+				if (chkMin(res, (ll)a1 / gcd(a1, b1) * b1)) maxk = a1 - a;
+			}
 		}
 	write(maxk, '\n', true);
 	IO::flush();
