@@ -54,9 +54,9 @@ int main()
 	for (int len = 2; len <= n; ++ len)//len 为长度,注意从 2 开始
 		for (int l = 1; l + len - 1 <= n; ++ l)//枚举 l
 		{
-            int r = l + len - 1;//计算出 r
-            f[l] = sum[r] - sum[l - 1] - min(f[l], f[l + 1]);
-        }
+			int r = l + len - 1;//计算出 r
+			f[l] = sum[r] - sum[l - 1] - min(f[l], f[l + 1]);
+		}
 	write(f[1], ' ', true);
 	write(sum[n] - f[1], '\n', true);
 	IO::flush();
