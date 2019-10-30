@@ -62,21 +62,21 @@ int main()//求出完美消除序列，从后往前依次给每个点染上可�
 	for (int x = 1, now = 0; x <= n; ++ x)
 	{
 		int flag = 0;
-        while (!flag)
+		while (!flag)
 		{
-            for (int i = V[best].size() - 1; i >= 0; -- i)
+			for (int i = V[best].size() - 1; i >= 0; -- i)
 			{
 				if (vis[V[best][i]]) V[best].pop_back();
 				else { flag = 1, now = V[best][i]; break; }
-            }
-            if (!flag) -- best;
-        }
-        Q[++ tot] = now, vis[now] = 1;
-        for (int i = head[now]; i; i = Next[i])
-        {
-            int y = ver[i];
-            if (!vis[y]) V[++ label[y]].push_back(y), chkMax(best, label[y]);
-        }
+			}
+			if (!flag) -- best;
+		}
+		Q[++ tot] = now, vis[now] = 1;
+		for (int i = head[now]; i; i = Next[i])
+		{
+			int y = ver[i];
+			if (!vis[y]) V[++ label[y]].push_back(y), chkMax(best, label[y]);
+		}
 	}
 	int ans = 0;
 	for (int i = 1; i <= n; ++ i) chkMax(ans, label[i] + 1);//本题只要求出颜色个数，可以证明答案为此式
