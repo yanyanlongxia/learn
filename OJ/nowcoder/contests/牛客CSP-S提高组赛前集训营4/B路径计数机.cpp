@@ -72,7 +72,7 @@ inline void dfs1(int x, int fa)
 		for (int j = 0; j <= ld[y]; ++ j) f[x][j + 1] += f[y][j];
 		chkMax(ld[x], ld[y] + 1);
 	}
-    scf[x][0] += cf[x][0] , scf[x][1] += cf[x][1];
+	scf[x][0] += cf[x][0] , scf[x][1] += cf[x][1];
 }
 
 inline void dfs2(int x, int fa)
@@ -81,16 +81,16 @@ inline void dfs2(int x, int fa)
 	for (int i = 0; i <= ld[x]; ++ i)
 		for (int k = 0; k < 2; ++ k)
 			if (p[k] >= i) cg[x][k] += f[x][i] * g[x][p[k] - i];
-    for (int i = head[x]; i; i = Next[i])
-    {
-    	int y = ver[i];
-    	if (y == fa) continue;
-    	cg[y][0] = cg[x][0] + cf[x][0] , cg[y][1] = cg[x][1] + cf[x][1];
-    	for (int j = 0; j <= n - ld[y]; ++ j) g[y][j + 1] = g[x][j] + f[x][j] - (j ? f[y][j - 1] : 0);
+	for (int i = head[x]; i; i = Next[i])
+	{
+		int y = ver[i];
+		if (y == fa) continue;
+		cg[y][0] = cg[x][0] + cf[x][0] , cg[y][1] = cg[x][1] + cf[x][1];
+		for (int j = 0; j <= n - ld[y]; ++ j) g[y][j + 1] = g[x][j] + f[x][j] - (j ? f[y][j - 1] : 0);
 		for (int j = 0; j <= n; ++ j)
 			for (int k = 0; k < 2; ++ k)
 				if (p[k] >= j + 1) cg[y][k] -= ( g[x][j] + (f[x][j] - (j ? f[y][j - 1] : 0))) * f[y][p[k] - j - 1];
-    	dfs2(y, x);
+		dfs2(y, x);
 	}
 }
 
