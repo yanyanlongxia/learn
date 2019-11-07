@@ -110,11 +110,11 @@ int main()
 				chkMin(f[x << 1][s], f[y << 1 | 1][Rs] + dist[did[Y[x]]][Y[y]] + Z[x]);
 			}
 		}
-    ll ans = INF;
-    for (int i = 0; i < k; ++ i)
-    {
-    	chkMin(ans, f[i << 1][(1 << k) - 1] + dist[did[X[i]]][1]);
-    	chkMin(ans, f[i << 1 | 1][(1 << k) - 1] + dist[did[Y[i]]][1]);
+	ll ans = INF;
+	for (int i = 0; i < k; ++ i)
+	{
+		chkMin(ans, f[i << 1][(1 << k) - 1] + dist[did[X[i]]][1]);
+		chkMin(ans, f[i << 1 | 1][(1 << k) - 1] + dist[did[Y[i]]][1]);
 	}
 	write(ans, '\n', true);
 	IO::flush();
