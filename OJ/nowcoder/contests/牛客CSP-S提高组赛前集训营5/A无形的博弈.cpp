@@ -29,12 +29,12 @@ namespace IO
     inline void flush() { fwrite(Out, 1, fe - Out, stdout); fe = Out; }
     template <typename T> inline void write(T x, char str, bool fl)
     {
-        if (!x) *fe++ = 48;
-        if (x < 0) *fe++ = '-', x = -x;
-        T num = 0, ch[20];
-        while (x) ch[++ num] = x % 10 + 48, x /= 10;
-        while (num) *fe++ = ch[num --];
-        if (fl) *fe++ = str;
+	if (!x) *fe++ = 48;
+	if (x < 0) *fe++ = '-', x = -x;
+	T num = 0, ch[20];
+	while (x) ch[++ num] = x % 10 + 48, x /= 10;
+	while (num) *fe++ = ch[num --];
+	if (fl) *fe++ = str;
     }
 }
 
@@ -60,9 +60,9 @@ inline ll Quick_Power(ll a, ll b)
 
 int main()
 {
-    int n;
+	int n;
 	read(n);
-    write(Quick_Power(2, n), '\n', true);
-    IO::flush();
-    return 0;
+	write(Quick_Power(2, n), '\n', true);
+	IO::flush();
+	return 0;
 }
