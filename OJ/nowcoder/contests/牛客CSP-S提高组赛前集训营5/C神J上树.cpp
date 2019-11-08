@@ -129,10 +129,10 @@ int main()
 				if (f[t][0] && t >= u && dep[f[t][0]] <= dep[ed]) ans += u * (dep[f[t][0]] - dep[t]), t = f[t][0];
 				for (int i = 20; i >= 0; -- i)
 					if (f[t][i] && dep[f[t][i]] <= dep[ed]) ans += w[t][i], t = f[t][i];
-                ans += (u = min(t , u)) * (dep[ed] - dep[t]);
-            }
+				ans += (u = min(t , u)) * (dep[ed] - dep[t]);
+			}
 			Top=0;
-            write(ans, '\n', true);
+			write(ans, '\n', true);
 		}
 	}
 	IO::flush();
