@@ -65,7 +65,7 @@ int main()
 	for (int i = 1; i <= n; ++ i) read(a[i]);
 	std::sort(a + 1, a + n + 1);
 	ll ans = 0;
-	for (int i = 1; i <= n; ++ i) ans = (ans + 1ll * a[i] * Quick_Power(2, i - 1) % mod + mod) % mod;//设小于 a_i 的数共有 j 个，那么 a_i 作为最大值的子集共有 2^j 个，对答案累加上 2^j\times a_i 即可。
+	for (int i = 1; i <= n; ++ i) ans = (ans + 1ll * a[i] * Quick_Power(2, i - 1) % mod + mod) % mod;//设小于 a_i 的数共有 j 个，那么 a_i 作为最大值的子集共有 2^j 个，对答案累加上 2^j\times a_i 即可
 	std::reverse(a + 1, a + n + 1);
 	for (int i = 1; i <= n; ++ i) ans = (ans - 1ll * a[i] * Quick_Power(2, i - 1) % mod + mod) % mod;//a_i 作为最小值同理
 	write(ans, '\n', true);
