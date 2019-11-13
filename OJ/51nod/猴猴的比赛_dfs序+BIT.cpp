@@ -74,7 +74,7 @@ namespace T1
 			if (y == fa) continue;
 			dfs(y, x);
 		}
-		edn[x] = ++ id;
+		edn[x] = id;
 	}
 }
 
@@ -89,7 +89,7 @@ namespace T2
 
 	inline void dfs(int x, int fa)
 	{
-		ans[x] += bit.ask(dfn[x] - 1);
+		ans[x] = bit.ask(dfn[x] - 1);
 		bit.add(dfn[x], 1);
 		bit.add(edn[x], -1);
 		for (int i = head[x]; i; i = Next[i])
