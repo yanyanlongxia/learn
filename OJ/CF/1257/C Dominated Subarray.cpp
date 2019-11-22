@@ -63,6 +63,6 @@ int main()//求任意头尾元素相同的序列中最小长度的一个
 		}
 		write(ans == inf ? -1 : ans, '\n', true);
 	}
-    IO::flush();
+	IO::flush();
 	return 0;
 }
