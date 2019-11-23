@@ -4,8 +4,6 @@
 
 May I go further and further on the road of learning.
 
-还是用中文吧。
-
 现在比较低迷，不知道自己到底怎么了，成绩出不来，很难受。
 
 -----
@@ -19,7 +17,7 @@ May I go further and further on the road of learning.
 
 int main()
 {
-    while (1) CSP2019_RP++;
+    while (1) CSP2020_RP++;
     return 0;
 }
 ```
