@@ -77,7 +77,7 @@ inline void Dijkstra(int s)
 	}
 }
 
-int main()
+int main()//乘积最短路，转化成 log ，就变成了加法，记录出最短路径，最后相乘即可
 {
 	read(n, m);
 	for (int i = 1, x, y, z; i <= m; ++ i) read(x, y, z), add(x, y, z);
